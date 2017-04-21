@@ -62,7 +62,7 @@
 									<td>${task.id}</td>
 									<td>${task.title}</td>
 									<td>${task.content}</td>
-									<td>${task.url}</td>
+									<td> <a href="${task.url}">${task.url}</a> </td>
 									<td><a href="update-task?id=${task.id}"><span class="glyphicon glyphicon-pencil"></span></a></td>
 									<td><a href="delete-task?id=${task.id}"><span class="glyphicon glyphicon-trash"></span></a></td>
 								</tr>

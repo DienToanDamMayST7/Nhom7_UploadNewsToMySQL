@@ -82,7 +82,7 @@ public class MainController {
 		File convFile = storageService.store(file);
 
 		UploadService service = new UploadService();
-		String url = service.Upload(convFile);
+		String url = service.Upload(convFile,file.getContentType());
 
 		redirectAttributes.addFlashAttribute("message",
 				"You successfully uploaded " + file.getOriginalFilename() + "! And Uploaded to Drive View: " + url);
@@ -117,7 +117,7 @@ public class MainController {
 	
 		File convFile = storageService.store(file);
 		UploadService service = new UploadService();
-		String url = service.Upload(convFile);
+		String url = service.Upload(convFile,file.getContentType());
 
 		redirectAttributes.addFlashAttribute("message",
 				"You successfully uploaded " + file.getOriginalFilename() + "! And Uploaded to Drive View: " + url);

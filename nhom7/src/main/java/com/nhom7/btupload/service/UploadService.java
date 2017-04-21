@@ -84,7 +84,7 @@ private static final String APPLICATION_NAME ="Drive API Quickstart";
 		
 	}
 	
-	public String Upload(File filePath) throws IOException {
+	public String Upload(File filePath,String contentType) throws IOException {
 		Drive service = getDriveService();
 		
 		/*FileList result = service.files().list()
@@ -106,7 +106,7 @@ private static final String APPLICATION_NAME ="Drive API Quickstart";
 		fileMetadata.setName(new Date().toString());
 		
 		System.out.println("kt" +  filePath.getAbsolutePath());
-		FileContent mediaContent = new FileContent("image/jpeg", filePath.getAbsoluteFile());
+		FileContent mediaContent = new FileContent(contentType, filePath.getAbsoluteFile());
 		com.google.api.services.drive.model.File file = service.files()
 				.create(fileMetadata,mediaContent)
 				.setFields("id")
