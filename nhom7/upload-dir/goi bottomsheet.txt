@@ -1,0 +1,14 @@
+buttonadd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                bottomSheetDialog = new BottomSheetDialog(HomeActivity.this);
+
+                View view1 = getLayoutInflater().inflate(R.layout.bottom_sheet_layout, null);
+
+                bottomSheetDialog.setContentView(view1);
+
+                bottomSheetDialog.show();
+
+            }
+        });
